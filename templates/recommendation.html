@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container form-container">
+        <h2>Course Recommendations</h2>
+        <form action="{{ url_for('recommendation') }}" method="POST">
+            <label for="preferred_topics">Enter Preferred Topics:</label>
+            <input type="text" id="preferred_topics" name="preferred_topics" required>
+            <button type="submit" class="button">Get Recommendation</button>
+        </form>
+
+        {% if recommendations %}
+            <h3>Recommended Courses:</h3>
+            <ul class="recommendation-list">
+                {% for course in recommendations %}
+                    <li>
+                        <strong>{{ course['Course Name'] }}</strong> - {{ course['University / Industry Partner Name'] }}
+                        <br>Difficulty Level: {{ course['Difficulty Level'] }} | Rating: {{ course['Course Rating'] }}
+                        <br><a href="{{ course['Course URL'] }}" target="_blank">View Course</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

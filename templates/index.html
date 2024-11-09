@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOC Course Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Base styling */
+        body { 
+        font-family: Arial, sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        background: url('{{ url_for('static', filename='images/background.jpg') }}') no-repeat center center/cover; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        min-height: 100vh; 
+        background-attachment: fixed;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+        width: 100%;
+        padding: 100px 20px;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero h1 { font-size: 48px; margin: 0; }
+    .hero p { font-size: 20px; max-width: 600px; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; display: flex; flex-direction: column; align-items: center; }
+
+        /* Hero Section */
+        .hero {
+            background: url('your-hero-image.jpg') no-repeat center center/cover;
+            width: 100%;
+            padding: 100px 20px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero h1 { font-size: 48px; margin: 0; }
+        .hero p { font-size: 20px; max-width: 600px; }
+
+        /* Main container */
+        .container {
+            text-align: center;
+            padding: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .button {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .button:hover { background-color: #0056b3; }
+
+        /* Feature Highlights Section */
+        .feature-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 1200px;
+            gap: 20px;
+        }
+        .feature-item {
+            background-color: #fff;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .feature-item h3 { font-size: 22px; color: #333; margin-bottom: 10px; }
+        .feature-item p { color: #666; font-size: 16px; }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a { color: #ccc; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to the MOOC Course Recommendation System</h1>
+        <p>Your journey to find the best courses starts here.</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="button-group">
+            <a href="{{ url_for('register') }}" class="button">Register New User</a>
+            <a href="{{ url_for('recommendation') }}" class="button">Get Recommendation</a>
+        </div>
+    </div>
+
+    <!-- Feature Highlights Section -->
+    <div class="feature-section">
+        <div class="feature-item">
+            <h3>Personalized</h3>
+            <p>Receive recommendations based on your interests and skills.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Top-Rated Courses</h3>
+            <p>Access courses highly rated by learners like you.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Skills-Based Search</h3>
+            <p>Quickly find courses based on the skills you want to learn.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 MOOC Recommendation System</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
